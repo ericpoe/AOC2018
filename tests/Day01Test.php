@@ -18,7 +18,7 @@ class Day01Test extends TestCase
     /**
      * @dataProvider aFrequencies
      */
-    public function testCanGetFinalFrequency(array $frequencies, int $expected)
+    public function testCanGetFinalFrequency(array $frequencies, int $expected) : void
     {
         $this->analyzer->setFrequencies($frequencies);
         $sum = $this->analyzer->getSum();
@@ -26,20 +26,20 @@ class Day01Test extends TestCase
         $this->assertEquals($expected, $sum);
     }
 
-    public function aFrequencies()
+    public function aFrequencies() : array
     {
         return [
-            [["+1", "-2", "+3", "+1"], 3],
-            [["+1", "+1", "+1"], 3],
-            [["+1", "+1", "-2"], 0],
-            [["-1", "-2", "-3"], -6],
+            [['+1', '-2', '+3', '+1'], 3],
+            [['+1', '+1', '+1'], 3],
+            [['+1', '+1', '-2'], 0],
+            [['-1', '-2', '-3'], -6],
         ];
     }
 
     /**
      * @dataProvider bFrequencies
      */
-    public function testCanGetFirstDuplicateFrequency(array $frequencies, int $expected)
+    public function testCanGetFirstDuplicateFrequency(array $frequencies, int $expected) : void
     {
         $this->analyzer->setFrequencies($frequencies);
         $firstDuplicate = $this->analyzer->getFirstDuplicate();
@@ -47,14 +47,14 @@ class Day01Test extends TestCase
         $this->assertEquals($expected, $firstDuplicate);
     }
 
-    public function bFrequencies()
+    public function bFrequencies() : array
     {
         return [
-            [["+1", "-2", "+3", "+1", "+1", "-2", "+2000"], 2],
-            [["+1", "-1"], 0],
-            [["+3", "+3", "+4", "-2", "-4"], 10],
-            [["-6", "+3", "+8", "+5", "-6"], 5],
-            [["+7", "+7", "-2", "-7", "-4"], 14],
+            [['+1', '-2', '+3', '+1', '+1', '-2', '+2000'], 2],
+            [['+1', '-1'], 0],
+            [['+3', '+3', '+4', '-2', '-4'], 10],
+            [['-6', '+3', '+8', '+5', '-6'], 5],
+            [['+7', '+7', '-2', '-7', '-4'], 14],
         ];
     }
 }

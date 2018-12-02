@@ -7,11 +7,11 @@ class Analyzer
     /** @var array */
     private $frequencies;
 
-    public function __construct(?string $fileName = "")
+    public function __construct(?string $fileName = '')
     {
         $this->frequencies = [];
 
-        if (!empty($fileName)) {
+        if ($fileName !== '') {
             $this->frequencies = file($fileName);
         }
     }
@@ -34,7 +34,7 @@ class Analyzer
         $duplicates = [];
         $runningTotal = 0;
         $loops = 1;
-        $lengthOfNums = sizeof($this->frequencies);
+        $lengthOfNums = count($this->frequencies);
 
         $infinite = new \InfiniteIterator(new \ArrayIterator($this->frequencies));
 
@@ -42,7 +42,7 @@ class Analyzer
             echo "On loop: $loops" . PHP_EOL;
             foreach (new \LimitIterator($infinite, 0, $loops * $lengthOfNums) as $value) {
                 $runningTotal += (int)$value;
-                if (in_array($runningTotal, $running)) {
+                if (in_array($runningTotal, $running, true)) {
                     $duplicates[] = $runningTotal;
                 }
 
