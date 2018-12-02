@@ -40,7 +40,7 @@ class Analyzer
 
         while (empty($duplicates)) {
             echo "On loop: $loops" . PHP_EOL;
-            foreach (new \LimitIterator($infinite, 0, $loops * $lengthOfNums) as $value) {
+            foreach (new \LimitIterator($infinite, 0, $lengthOfNums) as $value) {
                 $runningTotal += (int)$value;
                 if (in_array($runningTotal, $running, true)) {
                     $duplicates[] = $runningTotal;
