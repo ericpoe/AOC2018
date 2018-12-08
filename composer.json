@@ -1,29 +1,29 @@
 {
-    "name": "ericpoe/aoc2018",
-    "description": "Solutions to AOC 2018",
-    "type": "project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Eric Poe",
-            "email": "eric.poe@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=7.2.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7.4"
-    },
-    "autoload": {
-        "psr-4": {"AOC2018\\": "src"}
-    },
-    "autoload-dev": {
-        "psr-4": {"AOC2018\\Tests\\": "tests"}
-    },
-    "config": {
-        "platform": {
-            "php": "7.2.0"
-        }
+  "name": "ericpoe/aoc2018",
+  "description": "Solutions to AOC 2018",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Eric Poe",
+      "email": "eric.poe@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=7.3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.4"
+  },
+  "autoload": {
+    "psr-4": {"AOC2018\\": "src"}
+  },
+  "autoload-dev": {
+    "psr-4": {"AOC2018\\Tests\\": "tests"}
+  },
+  "config": {
+    "platform": {
+      "php": "7.3.0"
+    }
+  }
 }
