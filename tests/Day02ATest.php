@@ -4,7 +4,7 @@ namespace AOC2018\Tests;
 use AOC2018\Day02\Analyzer;
 use PHPUnit\Framework\TestCase;
 
-class Day02Test extends TestCase
+class Day02ATest extends TestCase
 {
     private $analyzer;
 
