@@ -18,7 +18,7 @@ class ClaimTest extends TestCase
         $this->assertEquals(3, $claim->getLeftEdge());
         $this->assertEquals(2, $claim->getTopEdge());
         $this->assertEquals(5, $claim->getWLength());
-        $this->assertEquals(4, $claim->getLengthH());
+        $this->assertEquals(4, $claim->getHLength());
     }
 
     public function getClaimIds()
