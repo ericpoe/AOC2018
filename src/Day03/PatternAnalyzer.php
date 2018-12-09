@@ -37,23 +37,31 @@ class PatternAnalyzer
     {
         $leftMost = $claim->getLeftEdge() + $claim->getWLength();
         $bottomMost = $claim->getTopEdge()+ $claim->getHLength();
+
         for ($x = $claim->getLeftEdge(); $x < $leftMost; $x++ ) {
             for ($y = $claim->getTopEdge(); $y < $bottomMost; $y++) {
                 $coord = new PatternCoordinate($x, $y);
-                $this->checkForOverlap($coord);
+
+                if ($this->hasOverlap($coord)) {
+                    continue;
+                }
+
                 $this->patternCoordinates[] = $coord;
             }
         }
     }
 
-    private function checkForOverlap(PatternCoordinate $coord): void
+    private function hasOverlap(PatternCoordinate $coord): bool
     {
-        if (in_array($coord, $this->patternCoordinates)) {
-            if (in_array($coord, $this->overlapCoordinates)) {
-                return;
-            }
-
-            $this->overlapCoordinates[] = $coord;
+        if (in_array($coord, $this->overlapCoordinates, false)) {
+            return true;
         }
+
+        if (in_array($coord, $this->patternCoordinates, false)) {
+            $this->overlapCoordinates[] = $coord;
+            return true;
+        }
+
+        return false;
     }
 }
